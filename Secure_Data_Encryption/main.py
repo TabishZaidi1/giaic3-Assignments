@@ -8,13 +8,6 @@ import sys
 from base64 import urlsafe_b64encode
 from hashlib import pbkdf2_hmac
 
-# Ensure cryptography is installed
-try:
-    from cryptography.fernet import Fernet
-except ModuleNotFoundError:
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "cryptography"])
-    from cryptography.fernet import Fernet
-
 # === Constants ===
 DATA_FILE = "data.json"
 SALT = b"secure_salt_value"
